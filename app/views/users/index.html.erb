@@ -1,0 +1,19 @@
+<h1>登録者一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>email</th>
+    <tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
