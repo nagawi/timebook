@@ -1,0 +1,22 @@
+<h1>投稿の確認</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>image</th>
+      <th>note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postings.each do |posting| %>
+      <tr> 
+        <td><%= posting.id %></td>
+        <td><%= posting.name %></td>
+        <td><%= image_tag posting.image_posting_url(:thumb) %></td>
+        <td><%= posting.note %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'postings/index'
+
+  get 'postings/new'
+
+  post 'postings', to: 'postings#create'
+
+  get 'top_page/index'
+
   get 'users/index'
 
   get 'users/new'
