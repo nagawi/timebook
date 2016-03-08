@@ -1,2 +1,22 @@
-<h1>フィード画面</h1>
-<p>Find me in app/views/top_page/index.html.erb</p>
+<h1>TopPage#index</h1>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>title</th>
+      <th>image</th>
+      <th>note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |f| %>
+      <tr>
+        <td><%= f.user.name %></td>
+        <td><%= f.name %></td>
+        <td><%= image_tag f.image_posting_url(:thumb) %></td>
+        <td><%= f.note %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

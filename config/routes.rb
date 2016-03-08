@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'top_page/index'
+
   get 'postings/index'
 
   get 'postings/new'

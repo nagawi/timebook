@@ -2,8 +2,8 @@
 <table>
   <thead>
     <tr>
-      <th>id</th>
-      <th>name</th>
+      <th>posting_id</th>
+      <th>title</th>
       <th>image</th>
       <th>note</th>
     </tr>
@@ -16,6 +16,7 @@
         <td><%= posting.name %></td>
         <td><%= image_tag posting.image_posting_url(:thumb) %></td>
         <td><%= posting.note %></td>
+        <td><%= posting.user.name %></td>
       </tr>
     <% end %>
   </tbody>
