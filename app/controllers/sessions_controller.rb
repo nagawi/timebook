@@ -5,11 +5,13 @@ class SessionsController < ApplicationController
     user = User.find_by(email:params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to :controller => 'top_page', :action => 'index'
+      redirect_to :controller => 'postings', :action => 'new'
     else
       render 'new'
     end
   end
   def destroy
+   log_out
+   redirect_to :action => 'new'
   end
 end

@@ -2,7 +2,7 @@
 <table>
   <thead>
     <tr>
-      <th>posting_id</th>
+      <th>name</th>
       <th>title</th>
       <th>image</th>
       <th>note</th>
@@ -11,12 +11,11 @@
 
   <tbody>
     <% @postings.each do |posting| %>
-      <tr> 
-        <td><%= posting.id %></td>
+      <tr>
+        <td><%= posting.user.name %></td>
         <td><%= posting.name %></td>
         <td><%= image_tag posting.image_posting_url(:thumb) %></td>
         <td><%= posting.note %></td>
-        <td><%= posting.user.name %></td>
       </tr>
     <% end %>
   </tbody>
