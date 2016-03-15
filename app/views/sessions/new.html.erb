@@ -1,5 +1,6 @@
 <h1>Log in</h1>
 
+<%= flash[:notice] %>
 <div>
   <div>
     <%= form_for(:session,url:login_path) do |f| %>

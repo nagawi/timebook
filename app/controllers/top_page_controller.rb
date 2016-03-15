@@ -1,6 +1,6 @@
 class TopPageController < ApplicationController
   def index
 
-    @contents = Posting.all
+    @contents = current_user.postings.all
   end
 end

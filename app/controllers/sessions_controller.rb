@@ -5,8 +5,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email:params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       log_in user
+      flash[:notice] = 'ログインに成功しました'
       redirect_to :controller => 'postings', :action => 'new'
     else
+      flash.now[:notice] = 'ログインに失敗しました'
       render 'new'
     end
   end

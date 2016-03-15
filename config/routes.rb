@@ -19,7 +19,17 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+  get '/users/:id', to: 'users#show'
+
   post 'users', to: 'users#create'
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

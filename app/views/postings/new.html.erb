@@ -1,5 +1,7 @@
 <h1>投稿作成</h1>
 
+<%= flash[:notice] %>
+
 <%= form_for(@posting, url: {:controller => :postings, :action => :create}) do |f| %>
 
   <div>
