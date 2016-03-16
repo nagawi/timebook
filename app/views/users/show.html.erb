@@ -1,4 +1,5 @@
 <p>
   <strong>Name:</strong>
-  <%= %>
+  <%= @user.name %>
+<%= render 'follow_form' if logged_in? %>
 </p>
