@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :to_log_in
+
   def index
 
     @users = User.all
@@ -31,6 +34,14 @@ class UsersController < ApplicationController
   def user_params
 
     params.require(:user).permit(:name,:email,:password)
+
+  end
+
+  def to_log_in
+
+    unless logged_in?
+      redirect_to :controller => 'sessions', :action => 'new'
+    end
 
   end
 end
