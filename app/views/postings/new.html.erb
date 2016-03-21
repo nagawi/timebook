@@ -8,6 +8,7 @@
     <%= f.label :user_id %><br>
     <%= f.collection_select  :user_id, @users, :id, :name  %>
   </div>
+
   <div>
     <%- f.label :image_posting %><br>
     <%= f.file_field :image_posting %>

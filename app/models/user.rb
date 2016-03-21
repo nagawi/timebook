@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
+  mount_uploader :image_user, ImageUserUploader
+
   def feed
     Posting.where("user_id IN (?) OR user_id = ?", following_ids, id)
   end

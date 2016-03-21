@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get  'login' => 'sessions#new'
 
   post 'login' => 'sessions#create'
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   post 'postings', to: 'postings#create'
 
+  delete '/postings/:id', to: 'postings#destroy', as: 'posting'
+
   get 'top_page/index'
 
   get 'users/index'
@@ -22,6 +25,10 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
 
   post 'users', to: 'users#create'
+
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user_path'
+
+  delete '/users/:id', to: 'users#destroy', as: 'user'
 
   resources :users do
     member do
