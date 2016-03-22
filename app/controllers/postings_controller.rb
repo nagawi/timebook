@@ -8,13 +8,12 @@ class PostingsController < ApplicationController
 
   def new
     @posting = Posting.new
-    @users = User.all
   end
 
   def create
     @posting = Posting.new(posting_params)
     @posting.save!
-    redirect_to  :action => 'index',  notice: 'posting was successfully updated.'
+    redirect_to  :action => 'index'
   rescue => e
     render :'new'
   end

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :postings
+  has_many :postings, dependent: :destroy
 
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :name, presence: true
+  validates :email, presence: true
+  validates :password, length: { :in => 4..12 }
 
   mount_uploader :image_user, ImageUserUploader
 
