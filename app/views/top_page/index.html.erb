@@ -1,23 +1,14 @@
-<h1>TopPage#index</h1>
+<h1 class = "title">TIMEBOOK</h1>
 <p><%= current_user.name %><%= "のフィード" %></p>
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>title</th>
-      <th>image</th>
-      <th>note</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class = "box1">
+<div class = "box2">
     <% @contents.each do |f| %>
-      <tr>
-        <td><%= f.user.name %></td>
-        <td><%= f.name %></td>
-        <td><%= image_tag f.image_posting_url(:thumb) %></td>
-        <td><%= f.note %></td>
-      </tr>
+<div style = "border: 1px solid green" >
+       <P style = "background-color: #c2eeff;"> <%= f.user.name %></p>
+       <p style = "background-color: #c2eeff;"><%= f.name %></p>
+       <div><%= image_tag f.image_posting_url(:thumb),  width: "400px", height: "300px" %></div>
+       <p style = "background-color: #c2eeff;"><%= f.note %></p>
+</div>
     <% end %>
-  </tbody>
-</table>
+</div>
+</div>

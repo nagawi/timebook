@@ -6,15 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style = "background-color: #dcdcdc">
 <%= link_to 'TOP page','/top_page/index'%>
 <%= link_to 'User','/users/index'%>
 <%= link_to 'Posting','/postings/index'%>
-<% if logged_in? %>
-  <%= link_to "Log out", logout_path, method: :delete, :data => {:confirm => '本当にログアウトしますか？'} %>
-<% else %>
-  <%= link_to "Log in", login_path %>
-<% end %>
+ <div style = "float: right;">
+   <% if logged_in? %>
+     <%= link_to "Log out", logout_path, method: :delete, :data => {:confirm => '本当にログアウトしますか？'} %>
+   <% else %>
+     <%= link_to "Log in", login_path %>
+   <% end %>
+</div>
 <%= yield %>
 
 </body>
