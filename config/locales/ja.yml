@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+   attributes:
+    user:
+     name: "名前" 
+   errors:
+    models:
+     user:
+      attributes:
+       name:
+        blank: "の所が空になっています"

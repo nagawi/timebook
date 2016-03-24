@@ -1,0 +1,14 @@
+<h1 class = "title">TIMEBOOK</h1>
+<p><%= current_user.name %><%= "のフィード" %></p>
+<div class = "box1">
+<div class = "box2">
+    <% @contents.each do |f| %>
+<div style = "border: 1px solid green" >
+       <P style = "background-color: #c2eeff;"> <%= f.user.name %></p>
+       <p style = "background-color: #c2eeff;"><%= f.name %></p>
+       <div><%= image_tag f.image_posting_url(:thumb),  width: "400px", height: "300px" %></div>
+       <p style = "background-color: #c2eeff;"><%= f.note %></p>
+</div>
+    <% end %>
+</div>
+</div>

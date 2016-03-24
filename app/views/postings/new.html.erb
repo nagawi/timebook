@@ -1,0 +1,39 @@
+<h1>投稿作成</h1>
+
+<%= flash[:notice] %>
+
+<%= form_for(@posting, url: {:controller => :postings, :action => :create}) do |f| %>
+  <% if @posting.errors.any? %>
+    <div>
+      <h2><%= pluralize(@posting.errors.count, "error") %> prohibited this posting from being saved:</h2>
+      <ul>
+
+        <% @posting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :user_id %><br>
+    <%= f.collection_select  :user_id, User.all, :id, :name  %>
+  </div>
+
+  <div>
+    <%- f.label :image_posting %><br>
+    <%= f.file_field :image_posting %>
+  </div>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :note %>
+    <%= f.text_field :note %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

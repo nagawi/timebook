@@ -1,0 +1,25 @@
+<h1>ユーザー情報</h1>
+<p>
+  <%= image_tag @user.image_user_url(:thumb) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>email:</strong>
+  <%= @user.email %>
+  </p>
+<p>
+  <strong>フォロー数:</strong>
+  <%= @user.following.count %>
+  </p>
+<p>
+  <strong>フォロワー数:</strong>
+  <%= @user.followers.count %>
+  </p>
+<%= render 'follow_form' if logged_in? %>
+
+<p><%= link_to "buck", :action => "index" %></p>
+
+

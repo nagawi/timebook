@@ -1,0 +1,26 @@
+<h1>投稿の確認</h1>
+<%= link_to "新規作成", :controller => "postings", :action => "new" %>
+<br><%= current_user.name %>
+<br><%= flash[:success] %>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>title</th>
+      <th>image</th>
+      <th>note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postings.each do |posting| %>
+      <tr>
+        <td><%= posting.user.name %></td>
+        <td><%= posting.name %></td>
+        <td><%= image_tag posting.image_posting_url(:thumb) %></td>
+        <td><%= posting.note %></td>
+        <td><%= link_to "delete", posting, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
