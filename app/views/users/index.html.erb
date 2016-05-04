@@ -1,13 +1,15 @@
-<h1>登録者一覧</h1>
+<h1 style="color: #ffffff;">登録者一覧</h1>
 <%= link_to "新規作成", :controller => "users", :action => "new" %>
-<table>
+<table class="table" style="color: #ffffff;">
   <thead>
     <tr>
       <th>image</th>
       <th>name</th>
       <th>email</th>
+      <th colspan="3"></th>
     <tr>
   </thead>
+  <br>
 
   <tbody>
     <% @users.each do |user| %>

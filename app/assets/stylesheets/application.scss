@@ -10,7 +10,21 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ @import
  *= require_self
  */
+@import "bootstrap";
 
+body {
+  background: url("sozai_night.jpeg")
+  center center / cover no-repeat fixed;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 500px;
+}
+.bg-primary {
+  max-width: 150px;
+}

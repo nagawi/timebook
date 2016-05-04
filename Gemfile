@@ -46,3 +46,4 @@ group :development do
 end
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'bootstrap', '~> 4.0.0.alpha3'

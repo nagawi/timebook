@@ -11,7 +11,7 @@ class PostingsController < ApplicationController
   end
 
   def create
-    @posting = Posting.new(posting_params)
+    @posting = current_user.posting.new(posting_params)
     @posting.save!
     redirect_to  :action => 'index'
   rescue => e

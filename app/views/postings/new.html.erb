@@ -1,4 +1,4 @@
-<h1>投稿作成</h1>
+<h1 style="color: #ffffff;">投稿作成</h1>
 
 <%= flash[:notice] %>
 
@@ -16,22 +16,23 @@
   <% end %>
 
   <div>
-    <%= f.label :user_id %><br>
-    <%= f.collection_select  :user_id, User.all, :id, :name  %>
+    <a style="color: #ffffff;"><%= current_user.name %></a><br>
   </div>
-
+  <br>
   <div>
-    <%- f.label :image_posting %><br>
+    <a style="color: #ffffff;"><%= f.label :image %></a>
     <%= f.file_field :image_posting %>
   </div>
+  <br>
   <div>
-    <%= f.label :title %>
-    <%= f.text_field :name %>
+    <a style="color: #ffffff;"><%= f.label :title %></a>
+    <p><%= f.text_field :name %></p>
   </div>
   <div>
-    <%= f.label :note %>
-    <%= f.text_field :note %>
+    <a style="color: #ffffff;"><%= f.label :note %></a>
+    <p><%= f.text_area :note, cols: "30", rows: "6" %></p>
   </div>
+  <br>
   <div>
     <%= f.submit %>
   </div>
